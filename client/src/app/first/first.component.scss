@@ -1,0 +1,44 @@
+.first{
+  &__input{
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 7px;
+    font-size: 1.1rem;
+  }
+  &__text{
+    padding: 10px;
+    font-size: 1.1rem;
+    min-height: 41px;
+  }
+  &__btn{
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #000;
+    cursor: pointer;
+    background-color: green;
+    color: #fff;
+  }
+  &__frame{
+    padding: 20px 0;
+  }
+  &__square{
+    width: 60px;
+    height: 60px;
+    margin-top: 30px;
+    border-radius: 5px;
+    &--red{
+      background-color: red;
+    }
+  }
+  &__frame{
+    padding: 20px 0;
+  }
+  &__head{
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+  }
+}
