@@ -1,0 +1,43 @@
+<div class="first">
+  <p class="first__text">{{ text }}</p>
+  <input
+    class="first__input"
+    (input)="inputText($event)"
+    [value]="text"
+  />
+  <div class="first__frame">
+    <button
+      class="first__btn"
+      (click)="flag = !flag"
+    >{{ flag ? 'Hide' : 'Show' }}</button>
+    <div
+      class="first__square"
+      [ngClass]="{'first__square--red': flag}"
+    >
+    </div>
+  </div>
+  <div class="first__frame">
+    <div class="first__head">
+      <button
+        class="first__btn"
+        (click)="article = 'one'"
+      >One</button>
+      <button
+        class="first__btn"
+        (click)="article = 'two'"
+      >Two</button>
+      <button
+        class="first__btn"
+        (click)="article = 'three'"
+      >Three</button>
+    </div>
+    <div class="first__frame" [ngSwitch]="article">
+      <p *ngSwitchCase="'one'">One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, et?</p>
+      <p *ngSwitchCase="'two'">Two Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, et?</p>
+      <p *ngSwitchCase="'three'">Three Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, et?</p>
+    </div>
+    <div class="first__frame">
+
+    </div>
+  </div>
+</div>
