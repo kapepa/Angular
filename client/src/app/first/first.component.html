@@ -36,8 +36,19 @@
       <p *ngSwitchCase="'two'">Two Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, et?</p>
       <p *ngSwitchCase="'three'">Three Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, et?</p>
     </div>
-    <div class="first__frame">
-
+    <div class="first__frame" >
+      <div class="flex">
+        <div class="first__cell">Name</div>
+        <div class="first__cell">Age</div>
+        <div class="first__cell">Married</div>
+      </div>
+      <ng-container *ngFor=" let user of userList; index as i ">
+        <div class="flex">
+          <div class="first__cell">{{user.name}}</div>
+          <div class="first__cell">{{user.age}}</div>
+          <div class="first__cell">{{user.married ? 'Yes' : 'No'}}</div>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

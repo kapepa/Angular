@@ -41,4 +41,12 @@
     flex-direction: row;
     gap: 11px;
   }
+  &__user{
+    display: flex;
+  }
+  &__cell{
+    min-width: 100px;
+    padding: 10px;
+    text-align: center;
+  }
 }
