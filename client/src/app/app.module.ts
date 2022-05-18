@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstModule } from "./first/first.module";
 import { UserModule } from "./user/user.module";
+import { AddModule } from "./add/add.module";
+import { ListModule } from "./list/list.module";
+
 
 @NgModule({
   declarations: [
@@ -15,6 +19,9 @@ import { UserModule } from "./user/user.module";
     AppRoutingModule,
     FirstModule,
     UserModule,
+    AddModule,
+    ListModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
