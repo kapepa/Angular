@@ -1,5 +1,12 @@
 <div class="container">
-  <app-add></app-add>
-  <app-list></app-list>
+  <app-add
+    (appendPost)="appendPost($event)"
+  ></app-add>
+  <app-list
+    *ngFor="let post of posts; index as i"
+    [post]="post"
+    [i]="i"
+    (delPost)="delPost($event)"
+  ></app-list>
 </div>
 
