@@ -16,12 +16,12 @@ import { ListModule } from "./list/list.module";
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     FirstModule,
     UserModule,
     AddModule,
     ListModule,
-    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
