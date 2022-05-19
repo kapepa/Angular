@@ -8,11 +8,13 @@ import { FirstModule } from "./first/first.module";
 import { UserModule } from "./user/user.module";
 import { AddModule } from "./add/add.module";
 import { ListModule } from "./list/list.module";
+import { AppDirective } from './app.directive';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppDirective
   ],
   imports: [
     BrowserModule,
