@@ -6,6 +6,12 @@ export interface IPost {
   text: string,
 }
 
+export interface ISearch {
+  title: string,
+  text: string,
+}
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,6 +23,16 @@ export class AppComponent implements OnInit {
     { id: 'b2', title: 'Two Article', text: 'Two Lorem ipsum dolor sit amet'},
     { id: 'c3', title: 'Three Article', text: 'Three Lorem ipsum dolor sit amet'},
   ]
+  searchList: ISearch[] = [
+    { title: 'First search title', text: 'First search text' },
+    { title: 'Two search title', text: 'Two search text' },
+    { title: 'Three search title', text: 'Three search text' },
+  ];
+  field = 'title';
+  search = '';
+  data = new Date();
+  text = 'text'
+  digit = [ 2, 4, 6 ];
 
   ngOnInit() {}
 

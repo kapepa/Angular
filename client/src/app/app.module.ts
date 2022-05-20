@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
 
@@ -9,12 +9,16 @@ import { UserModule } from "./user/user.module";
 import { AddModule } from "./add/add.module";
 import { ListModule } from "./list/list.module";
 import { AppDirective } from './app.directive';
+import { NumberPipe } from './pipe/number.pipe';
+import { SearchPipe } from './pipe/search.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppDirective
+    AppDirective,
+    NumberPipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,7 @@ import { AppDirective } from './app.directive';
     AddModule,
     ListModule,
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
