@@ -11,6 +11,8 @@
   <div appDirective>
     hellow
   </div>
+  <div class="async">{{ date$ | async | date: 'HH:mm:ss' }}</div>
+  <div class="async">Hellow - {{ promise | async }}</div>
   <div class="search">
     <input [(ngModel)]="search" class="search__input" type="text" name="search" />
     <div class="search__scope">

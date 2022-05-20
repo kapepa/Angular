@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Observable} from "rxjs";
 
 export interface IPost {
   id: string,
@@ -31,10 +32,13 @@ export class AppComponent implements OnInit {
   field = 'title';
   search = '';
   data = new Date();
+  time = new Date();
   text = 'text'
   digit = [ 2, 4, 6 ];
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.time)
+  }
 
   appendPost(post: IPost) {
     this.posts.unshift(post)
@@ -43,4 +47,17 @@ export class AppComponent implements OnInit {
   delPost(i: number) {
     this.posts.splice(i,1);
   }
+
+  promise: Promise<string> = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Friends')
+    },3000);
+  })
+
+  date$: Observable<Date> = new Observable<Date>((obs) => {
+    console.log(obs)
+    setInterval(() => {
+      obs.next(new Date())
+    },1000)
+  })
 }
