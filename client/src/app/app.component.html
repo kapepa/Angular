@@ -11,5 +11,25 @@
   <div appDirective>
     hellow
   </div>
+  <div class="search">
+    <input [(ngModel)]="search" class="search__input" type="text" name="search" />
+    <div class="search__scope">
+      <button (click)="field = 'title'"  >Title</button>
+      <button (click)="field = 'text'"  >Text</button>
+    </div>
+    <div class="search__frame"  *ngFor="let article of searchList | search:search:field ">
+      <div class="search__list">
+        <span>{{ article.title }}</span>
+        <span>{{ article.text }}</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="pipe">
+    <span>{{ digit | number }}</span>
+    <span>{{ data | date : 'd MMM YYY' }}</span>
+    <span>{{ text | uppercase }}</span>
+    <pre>{{ posts | json }}</pre>
+  </div>
 </div>
 
