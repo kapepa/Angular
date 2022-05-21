@@ -8,7 +8,7 @@ import { CounterService } from "./counter.service";
 })
 export class CounterComponent implements OnInit {
 
-  constructor(private counterService: CounterService) { }
+  constructor(public counterService: CounterService) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +18,8 @@ export class CounterComponent implements OnInit {
     const data = target.dataset['count'];
     if(data === 'decrease' && this.counterService.count > 0)  this.counterService.decrease() ;
     if(data === 'increase') this.counterService.increase() ;
+
+    console.log(this.counterService.count)
   }
 
 }

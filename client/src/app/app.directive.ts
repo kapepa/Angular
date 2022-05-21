@@ -1,10 +1,12 @@
-import {Directive, ElementRef, HostListener, Input, TemplateRef, ViewContainerRef} from '@angular/core';
+import {Directive, ElementRef, HostListener} from '@angular/core';
 
 @Directive({
   selector: '[appDirective]'
 })
 export class AppDirective {
-  constructor(private el: ElementRef) {}
+  constructor(
+    private el: ElementRef,
+  ) {}
 
   @HostListener('mouseenter') onMouseEnter() {
     this.highlight('yellow');
