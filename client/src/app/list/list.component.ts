@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IPost} from "../app.component";
+import {CounterService} from "../counter/counter.service";
 
 @Component({
   selector: 'app-list',
@@ -11,7 +12,7 @@ export class ListComponent implements OnInit {
   @Input() i: number = 0;
   @Output() delPost = new EventEmitter<number>()
 
-  constructor() { }
+  constructor(public counterService: CounterService) { }
 
   ngOnInit(): void {
   }
