@@ -1,0 +1,7 @@
+<section class="counter">
+  <span class="counter__span">{{ counterService.count }}</span>
+  <div class="counter__action">
+    <button (click)="changeCount($event)" class="counter__btn" data-count="decrease" >Decrease</button>
+    <button (click)="changeCount($event)" class="counter__btn" data-count="increase">Increase</button>
+  </div>
+</section>
