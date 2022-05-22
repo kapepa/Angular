@@ -11,7 +11,8 @@ import { ListModule } from "./list/list.module";
 import { AppDirective } from './app.directive';
 import { NumberPipe } from './pipe/number.pipe';
 import { SearchPipe } from './pipe/search.pipe';
-import {CounterModule} from "./counter/counter.module";
+import { CounterModule } from "./counter/counter.module";
+import { FormModule } from "./form/form.module";
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {CounterModule} from "./counter/counter.module";
     UserModule,
     AddModule,
     ListModule,
-    CounterModule
+    CounterModule,
+    FormModule,
   ],
   providers: [ ],
   bootstrap: [AppComponent]

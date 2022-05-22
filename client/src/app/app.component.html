@@ -1,38 +1,39 @@
 <div class="container">
-  <app-add
-    (appendPost)="appendPost($event)"
-  ></app-add>
-  <app-list
-    *ngFor="let post of posts; index as i"
-    [post]="post"
-    [i]="i"
-    (delPost)="delPost($event)"
-  ></app-list>
-  <app-counter></app-counter>
-  <div appDirective>
-    hellow
-  </div>
-  <div class="async">{{ date$ | async | date: 'HH:mm:ss' }}</div>
-  <div class="async">Hellow - {{ promise | async }}</div>
-  <div class="search">
-    <input [(ngModel)]="search" class="search__input" type="text" name="search" />
-    <div class="search__scope">
-      <button (click)="field = 'title'"  >Title</button>
-      <button (click)="field = 'text'"  >Text</button>
-    </div>
-    <div class="search__frame"  *ngFor="let article of searchList | search:search:field ">
-      <div class="search__list">
-        <span>{{ article.title }}</span>
-        <span>{{ article.text }}</span>
-      </div>
-    </div>
+  <app-form></app-form>
+<!--  <app-add-->
+<!--    (appendPost)="appendPost($event)"-->
+<!--  ></app-add>-->
+<!--  <app-list-->
+<!--    *ngFor="let post of posts; index as i"-->
+<!--    [post]="post"-->
+<!--    [i]="i"-->
+<!--    (delPost)="delPost($event)"-->
+<!--  ></app-list>-->
+<!--  <app-counter></app-counter>-->
+<!--  <div appDirective>-->
+<!--    hellow-->
+<!--  </div>-->
+<!--  <div class="async">{{ date$ | async | date: 'HH:mm:ss' }}</div>-->
+<!--  <div class="async">Hellow - {{ promise | async }}</div>-->
+<!--  <div class="search">-->
+<!--    <input [(ngModel)]="search" class="search__input" type="text" name="search" />-->
+<!--    <div class="search__scope">-->
+<!--      <button (click)="field = 'title'"  >Title</button>-->
+<!--      <button (click)="field = 'text'"  >Text</button>-->
+<!--    </div>-->
+<!--    <div class="search__frame"  *ngFor="let article of searchList | search:search:field ">-->
+<!--      <div class="search__list">-->
+<!--        <span>{{ article.title }}</span>-->
+<!--        <span>{{ article.text }}</span>-->
+<!--      </div>-->
+<!--    </div>-->
 
-  </div>
-  <div class="pipe">
-    <span>{{ digit | number }}</span>
-    <span>{{ data | date : 'd MMM YYY' }}</span>
-    <span>{{ text | uppercase }}</span>
-    <pre>{{ posts | json }}</pre>
-  </div>
+<!--  </div>-->
+<!--  <div class="pipe">-->
+<!--    <span>{{ digit | number }}</span>-->
+<!--    <span>{{ data | date : 'd MMM YYY' }}</span>-->
+<!--    <span>{{ text | uppercase }}</span>-->
+<!--    <pre>{{ posts | json }}</pre>-->
+<!--  </div>-->
 </div>
 
