@@ -14,13 +14,30 @@
       </div>
       <div class="form__address">
         <h5 class="form__h form__h--small">Address</h5>
-        <div class="form__contry">
-          <select class="form__select">
-            <option value="by">Белорусь</option>
-            <option value="ru">Россия</option>
-            <option value="ukr">Украина</option>
+        <div class="form__country">
+          <select #selectRef class="form__select  form__hidden">
+            <option *ngFor="let country of countries;" value={{country.value}}>{{ country.country }}</option>
           </select>
+          <div class="form__choose">
+            <div
+              (click)="openCountry = !openCountry"
+              [ngClass]="{'form__current--open' : openCountry}"
+              class="form__current"
+            >{{ selected.country }}</div>
+            <div class="form__dropped" *ngIf="openCountry">
+              <span
+                *ngFor="let country of countries; index as i"
+                class="form__name"
+                (click)="putCountry(i)"
+              >{{ country.country }}</span>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="form__skills">
+        <h5 class="form__h form__h--small">Your skills</h5>
+        <div></div>
+        <button>Add</button>
       </div>
     </form>
   </div>
