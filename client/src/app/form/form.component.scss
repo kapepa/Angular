@@ -1,0 +1,56 @@
+.form{
+  padding-top: 10px;
+  &__section{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  &__frame{
+    border: 1px solid gray;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 300px;
+  }
+  &__h{
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+    &--small{
+      font-size: 1.2rem;
+    }
+  }
+  &__cell{
+    display: flex;
+    flex-direction: column;
+  }
+  &__label{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-bottom: 4px;
+  }
+  &__input{
+    font-size: 1.1rem;
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid gray;
+    outline: none;
+  }
+  &__error{
+    color: red;
+    font-size: .8rem;
+    padding: 4px 0;
+    height: 19px;
+  }
+  &__address{
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 10px;
+  }
+  &__contry{
+
+  }
+  &__select{
+
+  }
+}
