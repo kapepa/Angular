@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
   digit = [ 2, 4, 6 ];
 
   ngOnInit() {
-    console.log(this.time)
+    // console.log(this.time)
   }
 
   appendPost(post: IPost) {
