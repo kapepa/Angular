@@ -25,7 +25,7 @@ export class FormComponent implements OnInit, AfterViewInit {
   profileForm = new FormGroup({
     email: new FormControl('',[Validators.required, Validators.minLength(6)]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    country: new FormControl('',[Validators.required]),
+    country: new FormControl('',[]),
   });
 
   constructor() { }
@@ -43,7 +43,6 @@ export class FormComponent implements OnInit, AfterViewInit {
     this.selectRef.nativeElement.children[index].selected = true;
     this.selected = this.countries[index];
     this.openCountry = false;
-    console.log(this.selectRef.nativeElement.value)
   }
 
   changeCity(e: Event): void {
