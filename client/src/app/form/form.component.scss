@@ -58,8 +58,8 @@
 
   }
   &__hidden{
-    visibility: hidden;
-    position: absolute;
+    //visibility: hidden;
+    //position: absolute;
   }
   &__current{
     background-color: white;
@@ -68,6 +68,8 @@
     position: relative;
     cursor: pointer;
     user-select: none;
+    font-size: 1.1rem;
+    border: 1px solid #000;
     &::before{
       content: "";
       position: absolute;
@@ -85,6 +87,9 @@
   &__choose{
     position: relative;
     margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   &__dropped{
     position: absolute;
@@ -109,5 +114,31 @@
       border: none;
     }
   }
-
+  &__btn{
+    padding: 4px 8px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: 1px solid #000;
+    background-color: transparent;
+    transition: background-color .25s linear;
+    cursor: pointer;
+    &:hover{
+      background-color: lightgray;
+    }
+    &:active{
+      background-color: lightslategray;
+    }
+  }
+  &__list{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  &__basement{
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
 }

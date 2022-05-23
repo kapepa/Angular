@@ -1,4 +1,11 @@
 import {Component, ElementRef, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+
+interface ICountries {
+  value: string,
+  country: string,
+  city: string,
+}
 
 @Component({
   selector: 'app-form',
@@ -7,13 +14,24 @@ import {Component, ElementRef, OnInit, ViewChild, AfterViewInit} from '@angular/
 })
 export class FormComponent implements OnInit, AfterViewInit {
   @ViewChild('selectRef') selectRef!: ElementRef;
-  countries = [{ value: 'by', country: 'Белорусь' }, { value: 'ru', country: 'Россия' }, { value: 'ukr', country: 'Украина' }];
+  countries: ICountries[] = [
+    { value: 'by', country: 'Белорусь', city: 'Минск' },
+    { value: 'ru', country: 'Россия', city: 'Москва' },
+    { value: 'ukr', country: 'Украина', city: 'Киев'}
+  ];
   selected = this.countries[0];
   openCountry = false;
+  skills: string[] = [];
+  profileForm = new FormGroup({
+    email: new FormControl('',[Validators.required, Validators.minLength(6)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    country: new FormControl('',[Validators.required]),
+  });
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   ngAfterViewInit(): void {
@@ -25,5 +43,26 @@ export class FormComponent implements OnInit, AfterViewInit {
     this.selectRef.nativeElement.children[index].selected = true;
     this.selected = this.countries[index];
     this.openCountry = false;
+    console.log(this.selectRef.nativeElement.value)
+  }
+
+  changeCity(e: Event): void {
+    const target = e.target as HTMLInputElement;
+    this.selected.city = target.value;
+  }
+
+  inputSkill(e: Event): void {
+    const target  = e.target as HTMLInputElement;
+    this.skills[Number(target.dataset['skill'])] = target.value;
+  }
+
+  appendSkill(): void {
+    this.skills.push('')
+  }
+
+  onSubmit(e: Event): void {
+    e.preventDefault();
+    const target = e.target as HTMLFormElement;
+    console.log(this.profileForm.value)
   }
 }
