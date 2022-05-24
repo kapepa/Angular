@@ -27,10 +27,10 @@
       <div class="form__address">
         <h5 class="form__h form__h--small">Address</h5>
         <div class="form__country">
-          <select formControlName="country" id="country" name="country" #selectRef class="form__select  form__hidden" >
+          <select  #selectRef  name="country"  class="form__select  form__hidden" >
             <option
               *ngFor="let country of countries; index as i"
-              value="country.value"
+              [attr.value]="country.value"
               [selected]="country.value === selected.value ? true: null"
             >{{ country.country }}</option>
           </select>
