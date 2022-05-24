@@ -23,12 +23,13 @@ export class FormComponent implements OnInit, AfterViewInit {
   openCountry = false;
   skills: string[] = [];
   profileForm = new FormGroup({
-    email: new FormControl('',[]),
-    password: new FormControl('', []),
+    email: new FormControl('',[Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     address: new FormControl({
-      country: new FormControl('by',[]),
-      city: new FormControl('Минск')
-    })
+      country: new FormControl('by',[Validators.required]),
+      city: new FormControl('Минск',[Validators.minLength(3)])
+    }),
+    skill: new FormControl([],[]),
   });
   // Validators.required, Validators.minLength(6)
   constructor() { }
@@ -47,20 +48,20 @@ export class FormComponent implements OnInit, AfterViewInit {
     this.selectRef.nativeElement.children[index].click();
     this.selected = this.countries[index];
     this.openCountry = false;
-    this.profileForm.patchValue({ address: { country: current.value, city: current.city } })
+    this.profileForm.controls['address'].value.city.setValue(current.city)
+    this.profileForm.controls['address'].value.country.setValue(current.value)
   }
 
   changeCity(e: Event): void {
     const target = e.target as HTMLInputElement;
     this.selected.city = target.value;
-    // this.profileForm.patchValue({ address: { ...this.profileForm.controls['address'], city: target.value } })
-    // this.profileForm.controls['address']['city'].setValue('asdas')
-    this.profileForm.controls['address'].value['city'].setValue(target.value)
+    this.profileForm.controls['address'].value.city.setValue(target.value)
   }
 
   inputSkill(e: Event): void {
     const target  = e.target as HTMLInputElement;
     this.skills[Number(target.dataset['skill'])] = target.value;
+    this.profileForm.controls['skill'].setValue(this.skills);
   }
 
   appendSkill(): void {
@@ -70,7 +71,7 @@ export class FormComponent implements OnInit, AfterViewInit {
   onSubmit(e: Event): void {
     e.preventDefault();
     const target = e.target as HTMLFormElement;
-    console.log(this.profileForm.value)
-    // console.log(this.selectRef.nativeElement.value)
+
+
   }
 }
