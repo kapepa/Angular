@@ -11,7 +11,12 @@
           id="email"
           formControlName="email"
         />
-        <small class="form__error"> text error </small>
+        <small class="form__error">
+          <ng-container *ngIf="email.invalid && email.touched">
+            <ng-container *ngIf="email.errors?.['required']">Email is required.</ng-container>
+            <ng-container *ngIf="email.errors?.['email']">Email is wrong.</ng-container>
+          </ng-container>
+        </small>
       </div>
       <div class="form__cell">
         <label class="form__label" for="password">Password</label>
@@ -22,7 +27,12 @@
           id="password"
           formControlName="password"
         />
-        <small class="form__error"> text error </small>
+        <small class="form__error">
+          <ng-container *ngIf="password.invalid && password.touched">
+            <ng-container *ngIf="password.errors?.['required']">Password is required.</ng-container>
+            <ng-container *ngIf="password.errors?.['minlength']">Password is short.</ng-container>
+          </ng-container>
+        </small>
       </div>
       <div class="form__address">
         <h5 class="form__h form__h--small">Address</h5>

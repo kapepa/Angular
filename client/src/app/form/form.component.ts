@@ -22,21 +22,24 @@ export class FormComponent implements OnInit, AfterViewInit {
   selected = this.countries[0];
   openCountry = false;
   skills: string[] = [];
-  profileForm = new FormGroup({
-    email: new FormControl('',[Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    address: new FormControl({
-      country: new FormControl('by',[Validators.required]),
-      city: new FormControl('Минск',[Validators.minLength(3)])
-    }),
-    skill: new FormControl([],[]),
-  });
-  // Validators.required, Validators.minLength(6)
+  profileForm: any
+
   constructor() { }
 
   ngOnInit(): void {
-
+    this.profileForm = new FormGroup({
+      email: new FormControl('',[Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      address: new FormControl({
+        country: new FormControl('by',[Validators.required]),
+        city: new FormControl('Минск',[Validators.minLength(3)])
+      }),
+      skill: new FormControl([],[]),
+    });
   }
+
+  get email() { return this.profileForm.get('email') }
+  get password() { return this.profileForm.get('password') }
 
   ngAfterViewInit(): void {
     const selected = this.selectRef.nativeElement as HTMLSelectElement;
@@ -71,7 +74,9 @@ export class FormComponent implements OnInit, AfterViewInit {
   onSubmit(e: Event): void {
     e.preventDefault();
     const target = e.target as HTMLFormElement;
-
-
+    if(this.profileForm.valid){
+      const form = {...this.profileForm.value, address: { ...this.profileForm.value.address.value}};
+      console.log(form)
+    }
   }
 }
