@@ -13,6 +13,8 @@ import { NumberPipe } from './pipe/number.pipe';
 import { SearchPipe } from './pipe/search.pipe';
 import { CounterModule } from "./counter/counter.module";
 import { FormModule } from "./form/form.module";
+import { HttpClientModule } from "@angular/common/http";
+import {CardModule} from "./card/card.module";
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { FormModule } from "./form/form.module";
     AddModule,
     ListModule,
     CounterModule,
+    CardModule,
     FormModule,
+    HttpClientModule,
   ],
   providers: [ ],
   bootstrap: [AppComponent]
