@@ -9,6 +9,11 @@ body{
   padding: 0 10px;
 }
 
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
 .flex{
   display: flex;
 }
