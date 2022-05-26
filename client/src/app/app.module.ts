@@ -15,6 +15,7 @@ import { CounterModule } from "./counter/counter.module";
 import { FormModule } from "./form/form.module";
 import { HttpClientModule } from "@angular/common/http";
 import {CardModule} from "./card/card.module";
+import {HeaderModule} from "./header/header.module";
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {CardModule} from "./card/card.module";
     CardModule,
     FormModule,
     HttpClientModule,
+    HeaderModule,
   ],
   providers: [],
   exports: [],

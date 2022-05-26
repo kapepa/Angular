@@ -1,0 +1,40 @@
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  &__section{
+    background-color: lightcoral;
+    height: 80px;
+  }
+  &__login{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  &__paths, &__nav{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  &__link{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    &--active{
+      color: black;
+    }
+  }
+  &__btn{
+    background-color: black;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: .25s ease-in background-color;
+    &:hover{
+      background-color: lightslategrey;
+    }
+  }
+}
