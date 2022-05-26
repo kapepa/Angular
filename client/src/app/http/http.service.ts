@@ -10,8 +10,12 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  getAll() {
-    return this.http.get<ICard[]>(`${this.url}/api/card/all`);
-  }
+  getAll() { return this.http.get<ICard[]>(`${this.url}/api/card/all`) };
+
+  appendCard(card: ICard) { return this.http.post<ICard>(`${this.url}/api/card/append`,card) };
+
+  completedCard(card: ICard) { return this.http.put<ICard>(`${this.url}/api/card/completed`,card) }
+
+  deleteCard(cardID: string) { return this.http.delete(`${this.url}/api/card?id=${cardID}`) }
 
 }

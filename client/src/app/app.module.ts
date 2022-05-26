@@ -1,6 +1,6 @@
-import {LOCALE_ID, NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,13 +16,12 @@ import { FormModule } from "./form/form.module";
 import { HttpClientModule } from "@angular/common/http";
 import {CardModule} from "./card/card.module";
 
-
 @NgModule({
   declarations: [
     AppComponent,
     AppDirective,
     NumberPipe,
-    SearchPipe
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +36,8 @@ import {CardModule} from "./card/card.module";
     FormModule,
     HttpClientModule,
   ],
-  providers: [ ],
+  providers: [],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
