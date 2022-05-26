@@ -1,3 +1,22 @@
-<section>
-  <div>{{ cardService.cards | json }}</div>
+<section class="card__section">
+  <div class="card__head">
+    <input [(ngModel)]="title" class="card__input" type="text" name="title">
+    <button (click)="appendCard()" class="card__btn">Send</button>
+  </div>
+  <div class="card__middle">
+    <div *ngFor="let card of cards; index as i" class="card__cell">
+      <div class="card__index">{{ card.id | short }}</div>
+      <div class="card__cap" [ngClass]="{'card__cap--line' : card.completed }" >{{ card.title | titlecase }}</div>
+      <div class="card__action">
+        <button
+          (click)="completedCard(i, card)"
+          class="card__btn"
+        >Completed</button>
+        <button
+          (click)="deleteCard(i, card.id)"
+          class="card__btn"
+        >Delete</button>
+      </div>
+    </div>
+  </div>
 </section>
