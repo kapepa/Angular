@@ -21,4 +21,6 @@ export class HttpService {
 
   receivePosts() { return this.http.get<IPost[]>(`${this.url}/api/post/all`) }
 
+  onePost(id: string) { return this.http.get<IPost>(`${this.url}/api/post/one?id=${id}`) }
+
 }

@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { CardComponent } from "./card/card.component";
 import { PostComponent } from "./post/post.component";
 import { AboutComponent } from "./about/about.component";
+import { ArticleComponent } from "./article/article.component";
 
 const routes: Routes = [
-  { path: '', component: CardComponent, data: { title: 'Home' } },
-  { path: 'post', component: PostComponent, data: { title: 'Post' } },
-  { path: 'about', component: AboutComponent, data: { title: 'About' } },
+  { path: '', component: CardComponent },
+  { path: 'post', component: PostComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'article/:id', component: ArticleComponent }
   // { path: '**', component: <component-name> }
 ];
 
