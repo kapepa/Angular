@@ -17,4 +17,8 @@ export class PostService {
   async allPost(): Promise<IPost[]> {
     return this.posts;
   }
+
+  async onePost(id: string): Promise<IPost> {
+    return this.posts.find(post => post.id === id);
+  }
 }

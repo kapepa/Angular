@@ -4,7 +4,8 @@
     <div *ngFor="let post of posts" class="post__node">
       <h5 class="post__h post__h--small">{{ post.title }}</h5>
       <small class="post__text">{{ post.text }}</small>
-      <a [routerLink]="['/article', post.id]" class="post__link" href="/">Read more ...</a>
+      <a [routerLink]="['/article', post.id]" class="post__link" >Read more ...</a>
     </div>
   </div>
 </section>
+<router-outlet></router-outlet>

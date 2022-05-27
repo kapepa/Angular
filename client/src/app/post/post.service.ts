@@ -13,6 +13,6 @@ export class PostService {
   ) { }
 
   receivePosts() {
-    this.httpService.receivePosts().subscribe(res => this.posts = res );
+    this.httpService.receivePosts().subscribe(res => this.posts = res, (error => console.log(error)) );
   }
 }
