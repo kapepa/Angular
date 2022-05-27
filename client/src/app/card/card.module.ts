@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card.component';
 import { FormsModule } from "@angular/forms";
-import {ShortPipe} from "../pipe/short.pipe";
+import { ShortPipe } from "../pipe/short.pipe";
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import {ShortPipe} from "../pipe/short.pipe";
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class CardModule { }
