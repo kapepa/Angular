@@ -55,7 +55,6 @@ export class AppComponent implements OnInit {
   })
 
   date$: Observable<Date> = new Observable<Date>((obs) => {
-    console.log(obs)
     setInterval(() => {
       obs.next(new Date())
     },1000)

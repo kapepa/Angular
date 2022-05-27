@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CardService, ICard} from "./card.service";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-card',
@@ -9,9 +10,13 @@ import {CardService, ICard} from "./card.service";
 export class CardComponent implements OnInit {
   title = '';
 
-  constructor(private cardService: CardService) { }
+  constructor(
+    private cardService: CardService,
+    private titleService: Title,
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Card');
     this.cardService.getAll()
   }
 

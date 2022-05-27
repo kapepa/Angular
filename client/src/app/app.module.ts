@@ -14,8 +14,9 @@ import { SearchPipe } from './pipe/search.pipe';
 import { CounterModule } from "./counter/counter.module";
 import { FormModule } from "./form/form.module";
 import { HttpClientModule } from "@angular/common/http";
-import {CardModule} from "./card/card.module";
-import {HeaderModule} from "./header/header.module";
+import { CardModule } from "./card/card.module";
+import { HeaderModule } from "./header/header.module";
+import { PostModule } from "./post/post.module";
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {HeaderModule} from "./header/header.module";
     FormModule,
     HttpClientModule,
     HeaderModule,
+    PostModule,
   ],
   providers: [],
   exports: [],

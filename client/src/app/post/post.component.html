@@ -1,0 +1,10 @@
+<section class="post__section">
+  <h5 class="post__h post__h--middle">{{ title }}</h5>
+  <div class="post__content">
+    <div *ngFor="let post of posts" class="post__node">
+      <h5 class="post__h post__h--small">{{ post.title }}</h5>
+      <small class="post__text">{{ post.text }}</small>
+      <a [routerLink]="['/article', post.id]" class="post__link" href="/">Read more ...</a>
+    </div>
+  </div>
+</section>
