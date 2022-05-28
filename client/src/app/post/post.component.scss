@@ -35,4 +35,15 @@
       text-decoration: underline;
     }
   }
+  &__action{
+    display: flex;
+    gap: 8px;
+  }
+  &__btn{
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 4px 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
 }

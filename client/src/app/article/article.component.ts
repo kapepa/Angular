@@ -19,12 +19,17 @@ export class ArticleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.httpService.onePost(params['id']).subscribe(res => {
-        this.article = res
-        this.titleService.setTitle(res.title);
-      });
-    })
+    const id = this.route.snapshot.paramMap.get('id')
+    this.httpService.onePost(String(id)).subscribe(res => {
+      this.article = res
+      this.titleService.setTitle(res.title);
+    });
+    // this.route.params.subscribe(params => {
+    //   this.httpService.onePost(params['id']).subscribe(res => {
+    //     this.article = res
+    //     this.titleService.setTitle(res.title);
+    //   });
+    // })
   }
 
 }
