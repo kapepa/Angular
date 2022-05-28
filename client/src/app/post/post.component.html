@@ -7,5 +7,11 @@
       <a [routerLink]="['/article', post.id]" class="post__link" >Read more ...</a>
     </div>
   </div>
+  <div class="post__action">
+<!--    <button [routerLink]="[]" [queryParams]="{ test: true }" class="post__btn">Query true</button>-->
+<!--    <button [routerLink]="[]" [queryParams]="{ test: false }" class="post__btn">Query false</button>-->
+    <button (click)="clickQuery($event)" class="post__btn">Query true</button>
+    <button (click)="clickQuery($event)" class="post__btn">Query false</button>
+  </div>
 </section>
 <router-outlet></router-outlet>

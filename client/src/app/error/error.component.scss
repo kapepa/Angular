@@ -1,0 +1,22 @@
+.error{
+  &__section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  &__wrapper{
+
+  }
+  &__h{
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 8px;
+    &--large{
+      font-size: 1.5rem;
+    }
+  }
+  &__link{
+    color: black;
+  }
+}
