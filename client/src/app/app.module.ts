@@ -17,6 +17,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { CardModule } from "./card/card.module";
 import { HeaderModule } from "./header/header.module";
 import { PostModule } from "./post/post.module";
+import { ErrorModule } from "./error/error.module";
+import { AboutModule } from "./about/about.module";
+import { MoreModule } from "./more/more.module";
+import {ArticleModule} from "./article/article.module";
 
 @NgModule({
   declarations: [
@@ -39,6 +43,10 @@ import { PostModule } from "./post/post.module";
     HttpClientModule,
     HeaderModule,
     PostModule,
+    ErrorModule,
+    AboutModule,
+    MoreModule,
+    ArticleModule,
   ],
   providers: [],
   exports: [],

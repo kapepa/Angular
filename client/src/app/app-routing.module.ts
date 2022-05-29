@@ -5,12 +5,14 @@ import { PostComponent } from "./post/post.component";
 import { AboutComponent } from "./about/about.component";
 import { ArticleComponent } from "./article/article.component";
 import { ErrorComponent } from "./error/error.component";
+import { AuthGuard } from "./auth/auth.guard";
+import { MoreComponent } from "./more/more.component";
 
 const routes: Routes = [
   { path: '', component: CardComponent },
-  { path: 'post', component: PostComponent },
+  { path: 'post', component: PostComponent, canActivate: [AuthGuard] },
   { path: 'about', component: AboutComponent },
-  { path: 'article/:id', component: ArticleComponent },
+  { path: 'article/:id', component: ArticleComponent, canActivate: [AuthGuard] , children: [  { path: 'more', component: MoreComponent} ] },
   { path: '**', component: ErrorComponent },
 ];
 
