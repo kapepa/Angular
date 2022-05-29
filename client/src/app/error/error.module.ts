@@ -7,6 +7,9 @@ import { AppRoutingModule } from "../app-routing.module";
   declarations: [
     ErrorComponent,
   ],
+  exports: [
+    ErrorComponent,
+  ],
   imports: [
     CommonModule,
     AppRoutingModule,
