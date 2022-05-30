@@ -20,7 +20,10 @@ import { PostModule } from "./post/post.module";
 import { ErrorModule } from "./error/error.module";
 import { AboutModule } from "./about/about.module";
 import { MoreModule } from "./more/more.module";
-import {ArticleModule} from "./article/article.module";
+import { ArticleModule } from "./article/article.module";
+import { PopupModule } from "./popup/popup.module";
+import { DynamicDirective } from './dynamic.directive';
+import {PopupComponent} from "./popup/popup.component";
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import {ArticleModule} from "./article/article.module";
     AppDirective,
     NumberPipe,
     SearchPipe,
+    DynamicDirective,
   ],
   imports: [
     BrowserModule,
@@ -47,9 +51,11 @@ import {ArticleModule} from "./article/article.module";
     AboutModule,
     MoreModule,
     ArticleModule,
+    PopupModule
   ],
   providers: [],
   exports: [],
+  // entryComponents: [ PopupComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

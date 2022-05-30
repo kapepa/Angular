@@ -1,0 +1,66 @@
+.popup{
+  background-color: #fff;
+  min-width: 300px;
+  &__section{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__hat{
+    padding: 12px 12px 6px 12px;
+    background-color: lightcoral;
+    position: relative;
+  }
+  &__h{
+    font-weight: bold;
+    &--large{
+      font-size: 1.2rem;
+    }
+  }
+  &__close_x{
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-10%, 10%);
+    width: 22px;
+    height: 22px;
+    opacity: 0.3;
+    cursor: pointer;
+    &::before, &::after{
+      content: '';
+      position: absolute;
+      left: 11px;
+      height: 22px;
+      width: 2px;
+      background-color: #333;
+    }
+    &::before{
+      transform: rotate(45deg);
+    }
+    &::after{
+      transform: rotate(-45deg);
+    }
+  }
+  &__main{
+    padding: 6px 12px;
+  }
+  &__text{
+    font-size: 1.1rem;
+  }
+  &__basemant{
+    padding: 6px 12px 12px 12px;
+  }
+  &__btn{
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+  }
+}
