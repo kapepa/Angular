@@ -1,5 +1,15 @@
 <main>
   <app-header></app-header>
+<!--  <app-popup-->
+<!--    *ngIf="popup"-->
+<!--    (popupCondition)="popupCondition()"-->
+<!--    title="My popup"-->
+<!--  ></app-popup>-->
+<!--  <button (click)="popup = !popup">Popup</button>-->
+
+  <button (click)="popupCondition()">Popup</button>
+  <ng-template appDynamic></ng-template>
+
   <div class="container">
     <router-outlet></router-outlet>
     <!--  <app-card></app-card>-->

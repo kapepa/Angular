@@ -1,0 +1,14 @@
+<section class="popup__section" (click)="closePopup($event)">
+  <div class="popup">
+    <div class="popup__hat">
+      <h5 class="popup__h popup__h--large">{{title}}</h5>
+      <div class="popup__close_x"></div>
+    </div>
+    <div class="popup__main">
+      <span class="popup__text">some text</span>
+    </div>
+    <div class="popup__basemant">
+      <button class="popup__btn">{{'ok' | uppercase}}</button>
+    </div>
+  </div>
+</section>
