@@ -7,9 +7,9 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class PopupComponent implements OnInit {
 
-  title = "My Title"
-  // @Input() title!: string;
+  @Input() title!: string;
   // @Output() popupCondition: EventEmitter<() => void> = new EventEmitter();
+  @Output() closeComponent: EventEmitter<() => void> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
@@ -19,6 +19,7 @@ export class PopupComponent implements OnInit {
     const target = e.target as HTMLElement
     if(target.classList.contains('popup__section') || target.classList.contains('popup__btn') || target.classList.contains('popup__close_x')) {
       // this.popupCondition.emit();
+      new this.closeComponent();
     }
   }
 

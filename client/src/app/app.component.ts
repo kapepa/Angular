@@ -1,6 +1,14 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit, Type, ViewChild, ViewEncapsulation} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component, ComponentFactoryResolver,
+  Input,
+  OnInit,
+  Type,
+  ViewChild,
+  ViewContainerRef,
+  ViewEncapsulation
+} from '@angular/core';
 import {Observable} from "rxjs";
-import {DynamicDirective} from "./dynamic.directive";
 import {PopupComponent} from "./popup/popup.component";
 
 export interface IPost {
@@ -12,10 +20,6 @@ export interface IPost {
 export interface ISearch {
   title: string,
   text: string,
-}
-
-class AdItem {
-  constructor(public component: Type<any>, public data: any) {}
 }
 
 @Component({
@@ -42,7 +46,7 @@ export class AppComponent implements OnInit {
   text = 'text'
   digit = [ 2, 4, 6 ];
 
-  @ViewChild(DynamicDirective, {static: true}) appDynamic!: DynamicDirective;
+  @ViewChild('appDynamic', {read: ViewContainerRef}) appDynamic!: ViewContainerRef;
 
   ngOnInit(): void {
 
@@ -68,19 +72,16 @@ export class AppComponent implements OnInit {
     },1000)
   })
 
-  @Input() ads: AdItem[] = [];
-  currentAdIndex = -1;
-
   public popupCondition(): void {
-    // this.popup = !this.popup;
+    this.popup = !this.popup;
+  }
 
-    this.currentAdIndex = (this.currentAdIndex + 1) % this.ads.length;
-    const adItem = this.ads[this.currentAdIndex];
 
-    const viewContainerRef = this.appDynamic.viewContainerRef;
-    viewContainerRef.clear();
-    const componentRef = viewContainerRef.createComponent<PopupComponent>(adItem.component);
-
-    // componentRef.instance.data = adItem.data;
+  createComponent() {
+    const component = this.appDynamic.createComponent(PopupComponent);
+    component.instance.title = 'My title';
+    component.instance.closeComponent.subscribe(() => {
+      this.appDynamic.clear();
+    })
   }
 }

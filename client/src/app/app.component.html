@@ -7,8 +7,10 @@
 <!--  ></app-popup>-->
 <!--  <button (click)="popup = !popup">Popup</button>-->
 
-  <button (click)="popupCondition()">Popup</button>
-  <ng-template appDynamic></ng-template>
+  <button (click)="createComponent()">Popup</button>
+  <ng-template
+    #appDynamic
+  ></ng-template>
 
   <div class="container">
     <router-outlet></router-outlet>
