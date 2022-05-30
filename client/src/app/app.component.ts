@@ -76,7 +76,6 @@ export class AppComponent implements OnInit {
     this.popup = !this.popup;
   }
 
-
   createComponent() {
     const component = this.appDynamic.createComponent(PopupComponent);
     component.instance.title = 'My title';

@@ -18,8 +18,7 @@ export class PopupComponent implements OnInit {
   closePopup (e: MouseEvent): void {
     const target = e.target as HTMLElement
     if(target.classList.contains('popup__section') || target.classList.contains('popup__btn') || target.classList.contains('popup__close_x')) {
-      // this.popupCondition.emit();
-      new this.closeComponent();
+      this.closeComponent.emit();
     }
   }
 
