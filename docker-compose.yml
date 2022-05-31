@@ -1,12 +1,21 @@
 version: '3.8'
 
 services:
-  server:
-    container_name: nestjs
-    hostname: nestjs
+  angularjs:
+    container_name: angularjs
+    hostname: angularjs
     build:
-      context: ./server
+      context: ./client
       dockerfile: ./Dockerfile
     ports:
-      - 5000:5000
+      - 4200:4200
     restart: always
+#  nestjs:
+#    container_name: nestjs
+#    hostname: nestjs
+#    build:
+#      context: ./server
+#      dockerfile: ./Dockerfile
+#    ports:cd
+#      - 5000:5000
+#    restart: always
