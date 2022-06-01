@@ -17,7 +17,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle('Card');
-    this.cardService.getAll()
+    this.cardService.getAll();
   }
 
   get cards() { return this.cardService.cards };
