@@ -1,4 +1,5 @@
 /node_modules
 /Dockerfile
-/.gitignore
-/.prettierrc
+/dist
+.prettierrc
+.dockerignore
